@@ -15,4 +15,56 @@ button {
 
 body {
   font-size: 18px;
+  background: url("../images/bg-main-desktop.png") no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 450px) {
+  body {
+    background: url("../images/bg-main-mobile.png") no-repeat;
+    background-size: contain;
+  }
+}
+
+.main-container {
+  border: 1px solid black;
+  display: flex;
+  width: 85%;
+}
+
+.cards-container {
+  position: relative;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.card-front-text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.thanks-card-container {
+  display: none;
+}
+
+.card-back-cvc-number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.card-front-img,
+.card-back-img {
+  width: 447px;
+  height: 245px;
+}
+
+.card-logo-img {
+  width: 84px;
+  height: 47px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=style.css.map */
