@@ -1,0 +1,94 @@
+.input-date--and-cvc-container,
+.input-row {
+  display: flex;
+}
+
+.form,
+.input-date-container,
+.input-cvc-container,
+.input-name-container,
+.input-card-number-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form {
+    gap: 26px;
+    justify-content: center;
+}
+
+.input-row {
+    gap: 10px;
+}
+
+.input-date--and-cvc-container {
+    gap: 27px;
+}
+
+// INPUTS
+label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+  color: $violet;
+  text-transform: uppercase;
+}
+
+input {
+  border: 1px solid $input-border;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding-left: 16px;
+  &::placeholder {
+    opacity: 0.25;
+    color: $violet;
+  }
+  &:focus {
+    outline: 1px solid $input-focus;
+  }
+}
+
+.input-name,
+.input-card-number {
+  width: 387px;
+  height: 45px;
+}
+
+.input-date {
+  width: 80px;
+  height: 45px;
+}
+
+.input-cvc {
+  width: 191px;
+  height: 45px;
+}
+
+// BTN
+.btn {
+  width: 381px;
+  height: 53px;
+  border-radius: 8px;
+  background-color: $violet;
+  color: $white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  &:hover{
+    opacity: 0.9;
+  }
+}
+
+// ERROR
+.error {
+  color: $red;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+}

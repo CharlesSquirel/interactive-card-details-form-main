@@ -1,4 +1,5 @@
 @import "_global.scss";
+@import "_form.scss";
 
 body {
   font-size: 18px;
@@ -10,6 +11,7 @@ body {
   @media (max-width: $mobile) {
     background: url("../images/bg-main-mobile.png") no-repeat;
     background-size: contain;
+    align-items: flex-start;
   }
 }
 
@@ -21,17 +23,36 @@ body {
   //   height: 100%;
   //   padding: 187px 227px 186px 164px;
   width: 85%;
+  gap: 240px;
+  @media (max-width: $mobile) {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .cards-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   color: $white;
+  gap: 37px;
+  @media (max-width: $mobile) {
+    flex-direction: column-reverse;
+    min-width: 375px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 32px 16px 0 16px;
+    gap: 0;
+  }
 }
 
 .card-front-text-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 137px;
+  left: 31px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .thanks-card-container {
@@ -40,8 +61,8 @@ body {
 
 .card-back-cvc-number {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 113px;
+  left: 467px;
 }
 
 // IMG
@@ -49,12 +70,69 @@ body {
 .card-back-img {
   width: 447px;
   height: 245px;
+  @media (max-width: $mobile) {
+    width: 286px;
+    height: 157px;
+  }
 }
 
 .card-logo-img {
   width: 84px;
   height: 47px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 28px;
+  @media (max-width: $mobile) {
+    width: 54px;
+    height: 30px;
+  }
+}
+
+.card-back-img {
+  position: relative;
+  left: 110px;
+  @media (max-width: $mobile) {
+    position: static;
+    align-self: flex-end;
+  }
+}
+
+.card-front-img {
+  @media (max-width: $mobile) {
+    position: absolute;
+    bottom: 0;
+    left:0;
+  }
+}
+
+// CARDS TYPOGRAPHY
+.card-front-number {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 3.5px;
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 2.2px;
+  }
+}
+
+.card-front-owner,
+.card-front-expiration-date {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @media (max-width: $mobile) {
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.3px;
+  }
+}
+
+.card-flex-row {
+  display: flex;
+  justify-content: space-between;
 }

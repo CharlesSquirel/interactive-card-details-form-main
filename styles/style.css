@@ -5,12 +5,113 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-button, input {
+button,
+input {
   cursor: pointer;
 }
 
 button {
   border: none;
+}
+
+.input-date--and-cvc-container,
+.input-row {
+  display: flex;
+}
+
+.form,
+.input-date-container,
+.input-cvc-container,
+.input-name-container,
+.input-card-number-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form {
+  gap: 26px;
+  justify-content: center;
+}
+
+.input-row {
+  gap: 10px;
+}
+
+.input-date--and-cvc-container {
+  gap: 27px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+  color: #21092f;
+  text-transform: uppercase;
+}
+
+input {
+  border: 1px solid #dfdee0;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding-left: 16px;
+}
+input::-moz-placeholder {
+  opacity: 0.25;
+  color: #21092f;
+}
+input:-ms-input-placeholder {
+  opacity: 0.25;
+  color: #21092f;
+}
+input::placeholder {
+  opacity: 0.25;
+  color: #21092f;
+}
+input:focus {
+  outline: 1px solid #6448FE;
+}
+
+.input-name,
+.input-card-number {
+  width: 387px;
+  height: 45px;
+}
+
+.input-date {
+  width: 80px;
+  height: 45px;
+}
+
+.input-cvc {
+  width: 191px;
+  height: 45px;
+}
+
+.btn {
+  width: 381px;
+  height: 53px;
+  border-radius: 8px;
+  background-color: #21092f;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+.error {
+  color: #FF5050;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
 }
 
 body {
@@ -25,6 +126,7 @@ body {
   body {
     background: url("../images/bg-main-mobile.png") no-repeat;
     background-size: contain;
+    align-items: flex-start;
   }
 }
 
@@ -32,17 +134,40 @@ body {
   border: 1px solid black;
   display: flex;
   width: 85%;
+  gap: 240px;
+}
+@media (max-width: 450px) {
+  .main-container {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .cards-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   color: hsl(0deg, 0%, 100%);
+  gap: 37px;
+}
+@media (max-width: 450px) {
+  .cards-container {
+    flex-direction: column-reverse;
+    min-width: 375px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 32px 16px 0 16px;
+    gap: 0;
+  }
 }
 
 .card-front-text-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 137px;
+  left: 31px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .thanks-card-container {
@@ -51,8 +176,8 @@ body {
 
 .card-back-cvc-number {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 113px;
+  left: 467px;
 }
 
 .card-front-img,
@@ -60,11 +185,79 @@ body {
   width: 447px;
   height: 245px;
 }
+@media (max-width: 450px) {
+  .card-front-img,
+.card-back-img {
+    width: 286px;
+    height: 157px;
+  }
+}
 
 .card-logo-img {
   width: 84px;
   height: 47px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 28px;
+}
+@media (max-width: 450px) {
+  .card-logo-img {
+    width: 54px;
+    height: 30px;
+  }
+}
+
+.card-back-img {
+  position: relative;
+  left: 110px;
+}
+@media (max-width: 450px) {
+  .card-back-img {
+    position: static;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 450px) {
+  .card-front-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.card-front-number {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 3.5px;
+}
+@media (max-width: 450px) {
+  .card-front-number {
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 2.2px;
+  }
+}
+
+.card-front-owner,
+.card-front-expiration-date {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media (max-width: 450px) {
+  .card-front-owner,
+.card-front-expiration-date {
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.3px;
+  }
+}
+
+.card-flex-row {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */
