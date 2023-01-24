@@ -29,30 +29,30 @@
       <form class="form">
         <div class="input-name-container">
           <label for="input-name">Cardholder Name</label>
-          <input id="input-name" class="input-name" type="text" placeholder="e.g. Jane Appleseed" />
+          <input id="input-name" class="input-name" type="text" placeholder="e.g. Jane Appleseed" autocomplete="off" />
           <span class="error error-input-name">error</span>
         </div>
         <div class="input-card-number-container">
           <label for="input-card-number">Card Number</label>
-          <input id="input-card-number" class="input-card-number" type="text" placeholder="e.g. 1234 5678 9123 0000"/>
+          <input id="input-card-number" class="input-card-number" type="text" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" />
           <span class="error error-input-card-number">error</span>
         </div>
         <div class="input-date--and-cvc-container">
           <div class="input-date-container">
             <label for="input-date">Exp. Date (MM/YY)</label>
             <div class="input-row">
-              <input id="input-date" class="input-date input-date-months" type="text" placeholder="MM" maxlength="2"/>
-              <input id="input-date" class="input-date input-date-years" type="text" placeholder="YY" maxlength="2"/>
+              <input id="input-date" class="input-date input-date-months" type="text" placeholder="MM" maxlength="2" autocomplete="off" />
+              <input id="input-date" class="input-date input-date-years" type="text" placeholder="YY" maxlength="2" autocomplete="off" />
             </div>
             <span class="error error-input-date">error</span>
           </div>
           <div class="input-cvc-container">
             <label for="input-cvc">CVC</label>
-            <input id="input-cvc" class="input-cvc" type="text" placeholder="e.g. 123"  maxlength="3"/>
+            <input id="input-cvc" class="input-cvc" type="text" placeholder="e.g. 123" maxlength="3" autocomplete="off" />
             <span class="error error-input-cvc">error</span>
           </div>
         </div>
-        <button class="btn form__btn">Confirm</button>
+        <button type="button" class="btn form__btn">Confirm</button>
       </form>
       <!-- Completed state start -->
       <section class="thanks-card-container">

@@ -1,6 +1,9 @@
 // DOM
+// form
+const form = document.querySelector(".form");
 // btn
 const confirmBtn = document.querySelector(".form__btn");
+let btnReady = 0;
 // inputs
 const nameInp = document.querySelector(".input-name");
 const numberInp = document.querySelector(".input-card-number");
@@ -13,12 +16,15 @@ const nameErr = document.querySelector(".error-input-name");
 const numberErr = document.querySelector(".error-input-card-number");
 const dateErr = document.querySelector(".error-input-date");
 const cvcErr = document.querySelector(".error-input-cvc");
+const errors = document.querySelectorAll(".error");
 // card elements
 const cardNumber = document.querySelector(".card-front-number");
 const cardOwner = document.querySelector(".card-front-owner");
 const cardDateMonths = document.querySelector(".expiration-date-months");
 const cardDateYears = document.querySelector(".expiration-date-years");
 const cardCvc = document.querySelector(".card-back-cvc-number");
+// thanks card
+const thanksCard = document.querySelector(".thanks-card-container");
 // CARD ELEMENTS REAL TIME VALUE
 // name
 nameInp.addEventListener("input", () => {
@@ -51,6 +57,11 @@ cvcInp.addEventListener("input", () => {
       : cvcInp.value;
 });
 // VALIDATION
+const confirmReady = () => {
+  if (btnReady === 5) {
+    confirmBtn.disabled = false;
+  }
+};
 confirmBtn.disabled = true;
 // name
 nameInp.addEventListener("blur", () => {
@@ -65,6 +76,8 @@ nameInp.addEventListener("blur", () => {
     nameErr.style.display = "block";
   } else {
     nameErr.style.display = "none";
+    btnReady++;
+    confirmReady();
   }
 });
 // number
@@ -80,6 +93,8 @@ numberInp.addEventListener("blur", () => {
     numberErr.style.display = "block";
   } else {
     numberErr.style.display = "none";
+    btnReady++;
+    confirmReady();
   }
 });
 // dates
@@ -94,10 +109,14 @@ dateInpts.forEach((inp) => {
     } else if (inp.value === "0") {
       dateErr.textContent = 'Value can\'t be "0"';
       dateErr.style.display = "block";
-    } else if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(inp.value)) {
-      inp.value = "0" + inp.value;
     } else {
       dateErr.style.display = "none";
+      btnReady++;
+      confirmReady();
+    }
+
+    if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(inp.value)) {
+      inp.value = "0" + inp.value;
     }
   });
 });
@@ -109,11 +128,21 @@ cvcInp.addEventListener("blur", () => {
   } else if (/[a-z]/gi.test(cvcInp.value) || /\W/gi.test(cvcInp.value)) {
     cvcErr.textContent = "Provide a valid CVC number";
     cvcErr.style.display = "block";
-  } else if (cvcInp.value.length === 2) {
+  } else {
+    cvcErr.style.display = "none";
+    btnReady++;
+    confirmReady();
+  }
+
+  if (cvcInp.value.length === 2) {
     cvcInp.value = "0" + cvcInp.value;
   } else if (cvcInp.value.length === 1) {
     cvcInp.value = "00" + cvcInp.value;
-  } else {
-    cvcErr.style.display = "none";
   }
+});
+
+// THANKS PAGE
+confirmBtn.addEventListener("click", () => {
+  form.style.display = "none";
+  thanksCard.style.display = "flex";
 });
