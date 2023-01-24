@@ -75,14 +75,6 @@ input {
   line-height: 23px;
   padding-left: 16px;
 }
-input::-moz-placeholder {
-  opacity: 0.25;
-  color: #21092f;
-}
-input:-ms-input-placeholder {
-  opacity: 0.25;
-  color: #21092f;
-}
 input::placeholder {
   opacity: 0.25;
   color: #21092f;
@@ -237,6 +229,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  width: 377px;
 }
 @media (max-width: 450px) {
   .card-front-text-container {
