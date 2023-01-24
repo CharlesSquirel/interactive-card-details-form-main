@@ -33,13 +33,28 @@ button {
   gap: 26px;
   justify-content: center;
 }
+@media (max-width: 450px) {
+  .form {
+    gap: 20px;
+  }
+}
 
 .input-row {
   gap: 10px;
 }
+@media (max-width: 450px) {
+  .input-row {
+    gap: 8px;
+  }
+}
 
 .input-date--and-cvc-container {
   gap: 27px;
+}
+@media (max-width: 450px) {
+  .input-date--and-cvc-container {
+    gap: 11px;
+  }
 }
 
 label {
@@ -80,15 +95,31 @@ input:focus {
   width: 387px;
   height: 45px;
 }
+@media (max-width: 450px) {
+  .input-name,
+.input-card-number {
+    width: 327px;
+  }
+}
 
 .input-date {
   width: 80px;
   height: 45px;
 }
+@media (max-width: 450px) {
+  .input-date {
+    width: 72px;
+  }
+}
 
 .input-cvc {
   width: 191px;
   height: 45px;
+}
+@media (max-width: 450px) {
+  .input-cvc {
+    width: 164px;
+  }
 }
 
 .btn {
@@ -104,6 +135,11 @@ input:focus {
 }
 .btn:hover {
   opacity: 0.9;
+}
+@media (max-width: 450px) {
+  .btn {
+    width: 327px;
+  }
 }
 
 .error {
@@ -139,7 +175,9 @@ body {
 @media (max-width: 450px) {
   .main-container {
     width: 100%;
+    height: 100%;
     flex-direction: column;
+    gap: 47px;
   }
 }
 
@@ -158,6 +196,7 @@ body {
     align-items: flex-start;
     padding: 32px 16px 0 16px;
     gap: 0;
+    max-height: 251px;
   }
 }
 
@@ -169,6 +208,12 @@ body {
   flex-direction: column;
   gap: 25px;
 }
+@media (max-width: 450px) {
+  .card-front-text-container {
+    top: 199px;
+    left: 39px;
+  }
+}
 
 .thanks-card-container {
   display: none;
@@ -176,8 +221,21 @@ body {
 
 .card-back-cvc-number {
   position: absolute;
-  bottom: 113px;
-  left: 467px;
+  bottom: 116px;
+  left: 474px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+@media (max-width: 450px) {
+  .card-back-cvc-number {
+    bottom: 0;
+    top: 104px;
+    left: 301px;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.3px;
+  }
 }
 
 .card-front-img,
@@ -204,6 +262,8 @@ body {
   .card-logo-img {
     width: 54px;
     height: 30px;
+    top: 135px;
+    left: 37px;
   }
 }
 
@@ -220,8 +280,8 @@ body {
 
 @media (max-width: 450px) {
   .card-front-img {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 68px;
     left: 0;
   }
 }

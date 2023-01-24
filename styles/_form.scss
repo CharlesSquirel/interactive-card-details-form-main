@@ -14,16 +14,25 @@
 }
 
 .form {
-    gap: 26px;
-    justify-content: center;
+  gap: 26px;
+  justify-content: center;
+  @media (max-width: $mobile) {
+    gap: 20px;
+  }
 }
 
 .input-row {
-    gap: 10px;
+  gap: 10px;
+  @media (max-width: $mobile) {
+    gap: 8px;
+  }
 }
 
 .input-date--and-cvc-container {
-    gap: 27px;
+  gap: 27px;
+  @media (max-width: $mobile) {
+    gap: 11px;
+  }
 }
 
 // INPUTS
@@ -34,6 +43,7 @@ label {
   letter-spacing: 2px;
   color: $violet;
   text-transform: uppercase;
+
 }
 
 input {
@@ -50,22 +60,32 @@ input {
   &:focus {
     outline: 1px solid $input-focus;
   }
+
 }
 
 .input-name,
 .input-card-number {
   width: 387px;
   height: 45px;
+  @media (max-width: $mobile) {
+    width: 327px;
+  }
 }
 
 .input-date {
   width: 80px;
   height: 45px;
+  @media (max-width: $mobile) {
+    width: 72px;
+  }
 }
 
 .input-cvc {
   width: 191px;
   height: 45px;
+  @media (max-width: $mobile) {
+    width: 164px;
+  }
 }
 
 // BTN
@@ -79,8 +99,11 @@ input {
   font-size: 18px;
   line-height: 23px;
   text-align: center;
-  &:hover{
+  &:hover {
     opacity: 0.9;
+  }
+  @media (max-width: $mobile) {
+    width: 327px;
   }
 }
 
