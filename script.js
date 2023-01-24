@@ -8,15 +8,12 @@ let btnReady = 0;
 const nameInp = document.querySelector(".input-name");
 const numberInp = document.querySelector(".input-card-number");
 const dateInpts = document.querySelectorAll(".input-date");
-const dateMonthsInp = document.querySelector(".input-date-months");
-const dateYearsInp = document.querySelector(".input-date-years");
 const cvcInp = document.querySelector(".input-cvc");
 // errors
 const nameErr = document.querySelector(".error-input-name");
 const numberErr = document.querySelector(".error-input-card-number");
 const dateErr = document.querySelector(".error-input-date");
 const cvcErr = document.querySelector(".error-input-cvc");
-const errors = document.querySelectorAll(".error");
 // card elements
 const cardNumber = document.querySelector(".card-front-number");
 const cardOwner = document.querySelector(".card-front-owner");
