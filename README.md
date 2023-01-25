@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/CharlesSquirel/interactive-card-details-form-main
+- Live Site URL: https://vercel.com/charlessquirel/interactive-card-details-form-main
 
 ## My process
 
@@ -45,5 +45,5 @@ Users should be able to:
 
 ## Author
 
-- Github -
-- Frontend Mentor -
+- Github - https://github.com/CharlesSquirel
+- Frontend Mentor - https://www.frontendmentor.io/profile/CharlesSquirel
