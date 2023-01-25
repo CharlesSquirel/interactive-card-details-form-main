@@ -3,11 +3,13 @@
 const form = document.querySelector(".form");
 // btn
 const confirmBtn = document.querySelector(".form__btn");
-let btnReady = 0;
+let btnReady = false;
 // inputs
 const nameInp = document.querySelector(".input-name");
 const numberInp = document.querySelector(".input-card-number");
 const dateInpts = document.querySelectorAll(".input-date");
+const dateMonthsInp = document.querySelector(".input-date-months");
+const dateYearsInp = document.querySelector(".input-date-years");
 const cvcInp = document.querySelector(".input-cvc");
 // errors
 const nameErr = document.querySelector(".error-input-name");
@@ -55,7 +57,7 @@ cvcInp.addEventListener("input", () => {
 });
 // VALIDATION
 const confirmReady = () => {
-  if (btnReady === 5) {
+  if (btnReady && nameInp.value.length > 0 && numberInp.value.length > 0 && dateMonthsInp.value.length > 0 && dateYearsInp.value.length > 0 && cvcInp.value.length > 0) {
     confirmBtn.disabled = false;
   }
 };
@@ -65,15 +67,18 @@ nameInp.addEventListener("blur", () => {
   if (nameInp.value.length === 0) {
     nameErr.textContent = "Please provide any letter";
     nameErr.style.display = "block";
+    btnReady = false;
   } else if (/[0-9]/gi.test(nameInp.value) || /\W/gi.test(nameInp.value)) {
     nameErr.textContent = "Name contains invalid characters";
     nameErr.style.display = "block";
+    btnReady = false;
   } else if (nameInp.value.length < 4) {
     nameErr.textContent = "Name is too short";
     nameErr.style.display = "block";
+    btnReady = false;
   } else {
     nameErr.style.display = "none";
-    btnReady++;
+    btnReady = true;
     confirmReady();
   }
 });
@@ -82,15 +87,18 @@ numberInp.addEventListener("blur", () => {
   if (numberInp.value.length === 0) {
     numberErr.textContent = "Please provide any number";
     numberErr.style.display = "block";
+    btnReady = false;
   } else if (/[a-z]/gi.test(numberInp.value) || /\W/gi.test(numberInp.value)) {
     numberErr.textContent = "Field contains invalid characters";
     numberErr.style.display = "block";
+    btnReady = false;
   } else if (numberInp.value.length !== 16) {
     numberErr.textContent = "Number should have 16 digits";
     numberErr.style.display = "block";
+    btnReady = false;
   } else {
     numberErr.style.display = "none";
-    btnReady++;
+    btnReady = true;
     confirmReady();
   }
 });
@@ -100,15 +108,18 @@ dateInpts.forEach((inp) => {
     if (inp.value.length === 0) {
       dateErr.textContent = "Provide date of expiration";
       dateErr.style.display = "block";
+      btnReady = false;
     } else if (/[a-z]/gi.test(inp.value) || /\W/gi.test(inp.value)) {
       dateErr.textContent = "Only digits are valid";
       dateErr.style.display = "block";
+      btnReady = false;
     } else if (inp.value === "0") {
       dateErr.textContent = 'Value can\'t be "0"';
       dateErr.style.display = "block";
+      btnReady = false;
     } else {
       dateErr.style.display = "none";
-      btnReady++;
+      btnReady = true;
       confirmReady();
     }
 
@@ -122,12 +133,14 @@ cvcInp.addEventListener("blur", () => {
   if (cvcInp.value.length === 0) {
     cvcErr.textContent = "Provide a CVC number";
     cvcErr.style.display = "block";
+    btnReady = false;
   } else if (/[a-z]/gi.test(cvcInp.value) || /\W/gi.test(cvcInp.value)) {
     cvcErr.textContent = "Provide a valid CVC number";
     cvcErr.style.display = "block";
+    btnReady = false;
   } else {
     cvcErr.style.display = "none";
-    btnReady++;
+    btnReady = true;
     confirmReady();
   }
 
