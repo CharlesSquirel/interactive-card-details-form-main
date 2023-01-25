@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/CharlesSquirel/interactive-card-details-form-main
-- Live Site URL: https://vercel.com/charlessquirel/interactive-card-details-form-main
+- Live Site URL: https://interactive-card-details-form-main-coral.vercel.app/
 
 ## My process
 
