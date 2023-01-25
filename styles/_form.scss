@@ -10,50 +10,49 @@
 .input-card-number-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .form {
-  gap: 26px;
+  gap: 1.625rem;
   justify-content: center;
   @media (max-width: $mobile) {
-    gap: 20px;
-    padding: 0 24px;
+    gap: 1.25rem;
+    padding: 0 1.5rem;
   }
 }
 
 .input-row {
-  gap: 10px;
+  gap: 0.625rem;
   @media (max-width: $mobile) {
-    gap: 8px;
+    gap: 0.5rem;
   }
 }
 
 .input-date--and-cvc-container {
-  gap: 27px;
+  gap: 1.6875rem;
   @media (max-width: $mobile) {
-    gap: 11px;
+    gap: 0.6875rem;
   }
 }
 
 // INPUTS
 label {
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 2px;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  letter-spacing: 0.125rem;
   color: $violet;
   text-transform: uppercase;
-
 }
 
 input {
   border: 1px solid $input-border;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
-  padding-left: 16px;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  padding-left: 1rem;
   &::placeholder {
     opacity: 0.25;
     color: $violet;
@@ -61,50 +60,49 @@ input {
   &:focus {
     outline: 1px solid $input-focus;
   }
-
 }
 
 .input-name,
 .input-card-number {
-  width: 387px;
-  height: 45px;
+  width: 24.1875rem;
+  height: 2.8125rem;
   @media (max-width: $mobile) {
-    width: 327px;
+    width: 20.4375rem;
   }
 }
 
 .input-date {
-  width: 80px;
-  height: 45px;
+  width: 5rem;
+  height: 2.8125rem;
   @media (max-width: $mobile) {
-    width: 72px;
+    width: 4.5rem;
   }
 }
 
 .input-cvc {
-  width: 191px;
-  height: 45px;
+  width: 11.9375rem;
+  height: 2.8125rem;
   @media (max-width: $mobile) {
-    width: 164px;
+    width: 10.25rem;
   }
 }
 
 // BTN
 .btn {
-  width: 381px;
-  height: 53px;
-  border-radius: 8px;
+  width: 23.8125rem;
+  height: 3.3125rem;
+  border-radius: 0.5rem;
   background-color: $violet;
   color: $white;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
   text-align: center;
   &:hover {
     opacity: 0.9;
   }
   @media (max-width: $mobile) {
-    width: 327px;
+    width: 20.4375rem;
   }
 }
 
@@ -112,8 +110,8 @@ input {
 .error {
   color: $red;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
   text-transform: capitalize;
   display: none;
 }
